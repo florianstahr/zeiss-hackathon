@@ -2,10 +2,19 @@ import { parse as parsePlist } from '@plist/parse';
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import { execSync } from 'node:child_process';
+import { config } from 'dotenv';
 
-const SOURCE_ID = 'machine-01';
-const VERSION_ID = 'v1';
-const INGEST_HOST = 'http://localhost:3000';
+config({ path: '.env.local' });
+
+function getEnvVar(str: string): string {
+  const val = process.env[str];
+  if (!val) throw new Error(`${str} env var not set!`);
+  return val;
+}
+
+const SOURCE_ID = getEnvVar('SOURCE_ID');
+const VERSION_ID = getEnvVar('VERSION_ID');
+const INGEST_HOST = getEnvVar('INGEST_HOST');
 
 // -------------------------------------------------------------------------------------------------
 // getDockerStats

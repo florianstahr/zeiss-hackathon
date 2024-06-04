@@ -12,6 +12,7 @@
   "dependencies": {
     "@plist/parse": "~1.1.0",
     "@types/fs-extra": "~11.0.4",
+    "dotenv": "~16.4.5",
     "execa": "~9.1.0",
     "fs-extra": "~11.2.0",
     "mongodb": "~6.7.0",
