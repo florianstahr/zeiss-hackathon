@@ -40,3 +40,5 @@ next-env.d.ts
 .vscode
 config.json
 config.keep*.json
+analysis-tasks.json
+analysis-tasks.keep*.json

@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "monitor": "ts-node src/scripts/monitor.ts"
+    "monitor": "ts-node src/scripts/monitor.ts",
+    "calc": "ts-node src/scripts/calc-analysis.ts"
   },
   "dependencies": {
     "@plist/parse": "~1.1.0",
     "@types/fs-extra": "~11.0.4",
+    "date-fns": "~3.6.0",
     "dotenv": "~16.4.5",
     "execa": "~9.1.0",
     "fs-extra": "~11.2.0",
