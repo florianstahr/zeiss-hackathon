@@ -1,0 +1,56 @@
+{
+  "tasks": [
+    {
+      "taskId": "task-1",
+      "type": "compare-docker-container-versions",
+      "containerName": "grafana",
+      "segments": [
+        {
+          "name": "v1",
+          "start": "2024-06-04 16:00:00",
+          "end": "2024-06-04 16:20:00"
+        },
+        {
+          "name": "v2",
+          "start": "2024-06-04 16:40:00",
+          "end": "2024-06-04 16:50:00"
+        },
+        {
+          "name": "v3",
+          "start": "2024-06-04 17:15:00",
+          "end": "2024-06-04 17:23:00"
+        }
+      ]
+    },
+    {
+      "taskId": "task-2",
+      "type": "compare-dev-machines",
+      "segments": [
+        {
+          "dev": "machine-1",
+          "name": "morning",
+          "start": "2024-06-04 17:15:00",
+          "end": "2024-06-04 17:30:00"
+        },
+        {
+          "dev": "machine-1",
+          "name": "afternoon",
+          "start": "2024-06-04 17:30:00",
+          "end": "2024-06-04 17:45:00"
+        },
+        {
+          "dev": "machine-02",
+          "name": "morning",
+          "start": "2024-06-04 17:15:00",
+          "end": "2024-06-04 17:30:00"
+        },
+        {
+          "dev": "machine-02",
+          "name": "afternoon",
+          "start": "2024-06-04 17:30:00",
+          "end": "2024-06-04 17:45:00"
+        }
+      ]
+    }
+  ]
+}
