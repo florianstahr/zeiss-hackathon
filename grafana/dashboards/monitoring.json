@@ -1,0 +1,1065 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_YESOREYERAM-INFINITY-DATASOURCE",
+      "label": "yesoreyeram-infinity-datasource",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "yesoreyeram-infinity-datasource",
+      "pluginName": "Infinity"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.4.3"
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "yesoreyeram-infinity-datasource",
+      "name": "Infinity",
+      "version": "2.7.1"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "ts",
+              "text": "ts",
+              "type": "timestamp_epoch"
+            },
+            {
+              "selector": "wattage",
+              "text": "value",
+              "type": "number"
+            },
+            {
+              "selector": "sourceId",
+              "text": "sourceId",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/data",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Power usage per developer machine",
+      "transformations": [
+        {
+          "id": "prepareTimeSeries",
+          "options": {
+            "format": "multi"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "value my-app123"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "ts",
+              "text": "ts",
+              "type": "timestamp_epoch"
+            },
+            {
+              "selector": "wattage",
+              "text": "value",
+              "type": "number"
+            },
+            {
+              "selector": "docker.containers.name",
+              "text": "name",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/container",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Power usage per container",
+      "transformations": [
+        {
+          "id": "prepareTimeSeries",
+          "options": {
+            "format": "multi"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "docker-container-version": {
+                  "index": 0
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 7
+      },
+      "id": 4,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "allValues"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "insightType",
+              "text": "insightType",
+              "type": "string"
+            },
+            {
+              "selector": "task.containerName",
+              "text": "containerName",
+              "type": "string"
+            },
+            {
+              "selector": "segment.name",
+              "text": "containerVersion",
+              "type": "string"
+            },
+            {
+              "selector": "avg",
+              "text": "avg",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [
+            {
+              "field": "insightType",
+              "operator": "equals",
+              "value": [
+                "docker-container-version"
+              ]
+            }
+          ],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/insights",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Power used per docker container version avg (in W)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "docker-container-version": {
+                  "index": 0
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 7,
+        "x": 8,
+        "y": 7
+      },
+      "id": 7,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "allValues"
+          ],
+          "fields": "/^sum$/",
+          "values": true
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "insightType",
+              "text": "insightType",
+              "type": "string"
+            },
+            {
+              "selector": "task.containerName",
+              "text": "containerName",
+              "type": "string"
+            },
+            {
+              "selector": "segment.name",
+              "text": "containerVersion",
+              "type": "string"
+            },
+            {
+              "selector": "sum",
+              "text": "sum",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [
+            {
+              "field": "insightType",
+              "operator": "equals",
+              "value": [
+                "docker-container-version"
+              ]
+            }
+          ],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/insights",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Energy used per docker container version sum (in Ws)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 10,
+        "w": 9,
+        "x": 15,
+        "y": 7
+      },
+      "id": 10,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px;\">\n    <div style=\"max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\">\n        <h1 style=\"color: #333; text-align: center;\">Electricity Consumption</h1>\n        <p style=\"font-size: 1.2em; color: #555; margin-bottom: 20px;\">Germany Carbon Intensity: <strong>227 gCO₂eq/kWh</strong></p>\n        <p style=\"font-size: 1.2em; color: #555; margin-bottom: 20px;\">Version 1 = <strong>0,0034731 gCO₂eq/h</strong></p>\n        <p style=\"font-size: 1.2em; color: #555; margin-bottom: 20px;\">Version 2 = <strong>0,0130071 gCO₂eq/h</strong></p>\n        <div style=\"background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 10px; margin: 20px 0;\">\n            <p style=\"font-size: 1.1em; color: #000; font-weight: bold;\">Result: Version 2 &gt; Version 1 (Latest)</p>\n        </div>\n    </div>\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.3",
+      "title": "Version Feedback",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 12
+      },
+      "id": 3,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "allValues"
+          ],
+          "fields": "/^avg$/",
+          "values": true
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "insightType",
+              "text": "insightType",
+              "type": "string"
+            },
+            {
+              "selector": "avg",
+              "text": "avg",
+              "type": "number"
+            },
+            {
+              "selector": "dev",
+              "text": "dev",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [
+            {
+              "field": "insightType",
+              "operator": "equals",
+              "value": [
+                "dev"
+              ]
+            }
+          ],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/insights",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Power used per developer avg (in W)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 7,
+        "x": 8,
+        "y": 12
+      },
+      "id": 8,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "allValues"
+          ],
+          "fields": "/^sum$/",
+          "values": true
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "insightType",
+              "text": "insightType",
+              "type": "string"
+            },
+            {
+              "selector": "dev",
+              "text": "dev",
+              "type": "string"
+            },
+            {
+              "selector": "sum",
+              "text": "sum",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [
+            {
+              "field": "insightType",
+              "operator": "equals",
+              "value": [
+                "dev"
+              ]
+            }
+          ],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/insights",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Energy used per developer sum (in Ws)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 11,
+        "x": 0,
+        "y": 17
+      },
+      "id": 5,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "allValues"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "insightType",
+              "text": "insightType",
+              "type": "string"
+            },
+            {
+              "selector": "segment.name",
+              "text": "containerVersion",
+              "type": "string"
+            },
+            {
+              "selector": "avg",
+              "text": "avg",
+              "type": "number"
+            },
+            {
+              "selector": "segment.dev",
+              "text": "dev",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [
+            {
+              "field": "insightType",
+              "operator": "equals",
+              "value": [
+                "dev-segment"
+              ]
+            }
+          ],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/insights",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Power used per developer and time slot avg (in W)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "cdoyrezva4cu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 11,
+        "x": 11,
+        "y": 17
+      },
+      "id": 9,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "allValues"
+          ],
+          "fields": "/^sum$/",
+          "values": true
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "insightType",
+              "text": "insightType",
+              "type": "string"
+            },
+            {
+              "selector": "segment.name",
+              "text": "containerVersion",
+              "type": "string"
+            },
+            {
+              "selector": "segment.dev",
+              "text": "dev",
+              "type": "string"
+            },
+            {
+              "selector": "sum",
+              "text": "sum",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "cdoyrezva4cu8b"
+          },
+          "filters": [
+            {
+              "field": "insightType",
+              "operator": "equals",
+              "value": [
+                "dev-segment"
+              ]
+            }
+          ],
+          "format": "dataframe",
+          "global_query_id": "",
+          "parser": "simple",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "uql": "parse-json",
+          "url": "http://host.docker.internal:3001/insights",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Energy used per developer and time slot sum (in Ws)",
+      "type": "bargauge"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Monitoring",
+  "uid": "ednrbjho21khse",
+  "version": 43,
+  "weekStart": ""
+}

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+    ports:
+      - "27117:27017"
+    volumes:
+      - mongodb-data:/data/db
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_INSTALL_PLUGINS: yesoreyeram-infinity-datasource
+      DS_YESOREYERAM-INFINITY-DATASOURCE: cdoyrezva4cu8b
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    volumes:
+      # - grafana-data:/var/lib/grafana
+      - ./grafana/dashboards.yaml:/etc/grafana/provisioning/dashboards/main.yaml
+      - ./grafana/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - ./grafana/plugins.yaml:/etc/grafana/provisioning/plugins/plugins.yaml
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+
+volumes:
+  mongodb-data:
+  # grafana-data:

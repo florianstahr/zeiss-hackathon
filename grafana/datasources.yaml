@@ -1,0 +1,7 @@
+apiVersion: 1
+
+datasources:
+  - name: yesoreyeram-infinity-datasource
+    type: yesoreyeram-infinity-datasource
+    isDefault: true
+    uid: cdoyrezva4cu8b
